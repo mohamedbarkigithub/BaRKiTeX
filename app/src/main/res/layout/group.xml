@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+    android:background="@android:color/holo_green_dark">
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
+        android:background="@android:color/holo_green_dark"
+        android:padding="10dp">
+		<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+			android:id="@+id/pullToRefresh"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+			<ListView
+				android:id="@+id/listview_group"
+				android:divider = "@android:color/transparent"
+				android:dividerHeight = "5dp"
+				android:longClickable="true"
+				android:clickable="true"
+				android:transcriptMode="alwaysScroll"
+				android:stackFromBottom="false"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				tools:ignore="KeyboardInaccessibleWidget">
+			</ListView>
+		</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+		<ImageButton
+			android:id="@+id/btn_add_group"
+			android:layout_width="70dp"
+			android:layout_height="70dp"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentBottom="true"
+			android:layout_marginRight="20dp"
+			android:layout_marginBottom="20dp"
+			android:background="@drawable/button_add_group"
+			android:src="@drawable/ic_plus"
+			tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+	</RelativeLayout>
+</LinearLayout>
+

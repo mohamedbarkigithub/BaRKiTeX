@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="drawer_close">غلق</string>
+    <string name="drawer_open">فتح</string>
+	
+	<string name="page_about">صفحة المطور على فيسبوك:</string>
+	<string name="email_about">البريد الإلكتروني للمطور:</string>
+	<string name="site_about">لتحديث التطبيق:</string>
+   
+	<string name="copy_text_to_clip">تم نسخ النص بنجاح!!!</string>
+    <string name="saved_to_folder">تم الحفظ في مجلد</string>
+    
+	<string name="oops_screenshot">عذرا!!! هاتفك لا يدعم هذه الخاصية</string>
+    
+	<string name="text_empty">رجاءً، يرجى إدخال نص!!!</string>
+	<string name="validate_empty">رجاءً، يرجى إدخال عبارة صحيحة!!!</string>
+	<string name="validate_more">عبارة طويلة جدًا!!!!!!</string>
+	<string name="other_name">يرجى إدخال إسم آخر!!!</string>
+	
+	<string name="error">خطأ!!!</string>
+	
+	<string name="title_about">هذا التطبيق يساعد على:</string>
+    <string name="text_about">تحرير ومعالجة وحفظ العبارات الرياضياتية بلغة لاتاك</string>
+	
+	<string name="welcom">مرحبا</string>
+	
+
+
+	<string name="worng_package">
+        اسم الحزمة خاطئ !!!
+    </string>
+    <string name="worng_name">
+        اسم التطبيق خاطئ !!!
+    </string>
+	<string name="worng_time">
+		يجب تحديث التطبيق !!!
+	</string>
+	<string name="re_exit">
+        اضغط مرة أخرى للخروج من التطبيق
+    </string>
+	<string name="dont_clear_data">لا يمكن حذف بيانات هذا التطبيق</string>
+
+
+
+
+
+
+
+	<string name="re_group">Press again to return to the sections page</string>
+
+	<string name="group_add_str">Add new section</string>
+	<string name="group_help_str">Sur App</string>
+	<string name="group_name">My Sections</string>
+	<string name="group_new">New Section</string>
+	<string name="set_group_name">set section name</string>
+	<string name="delete_group_name">Do you really want to delete this section?</string>
+	<string name="this_is_a_new_formula">this is a new formula with BaRKiTeX</string>
+	<string name="section">Section</string>
+	<string name="section_num">Section N°</string>
+	<string name="formula_num">Formula N°</string>
+	<string name="formula_new">New Formula</string>
+	<string name="set_formula_name">set formula name</string>
+
+	<string name="screen_name">My Formula</string>
+	<string name="editor_name"> </string>
+	<string name="fr_lang">abcdefghijklmnopqrstuvwxyzaZERTYUIOPQSDFGHJKLMWXCVBN 0123456789</string>
+	<string name="cmd_lang">abcdefghijklmnopqrstuvwxyzaZERTYUIOPQSDFGHJKLMWXCVBN _{}[]()*\"\\ 0123456789</string>
+	<string name="action_settings">Settings</string>
+	<string name="title_activity_data_view">DataViewActivity</string>
+	<string name="title_activity_add_data">AddDataActivity</string>
+	<string name="title_activity_main">MainActivity</string>
+	<string name="new_document_title">New Document</string>
+	<string name="generate_pdf">Generate PDF</string>
+	<string name="document_dialog_title">Document Options</string>
+	<string name="settings">Settings</string>
+	<string name="rename_hint">Document Title</string>
+	<string name="confirm">Confirm</string>
+	<string name="cancel">Cancel</string>
+	<string name="documents">Documents</string>
+	<string name="save_document">Save Document</string>
+	<string name="title">Title</string>
+	<string name="modified">Modified:</string>
+	<string name="date">Date</string>
+	<string name="filetype">File type</string>
+	<string name="back">Back</string>
+	<string name="choose_file">Choose a file</string>
+	<string name="compiling_error_title">Compiling Error</string>
+	<string name="compiling_error_message">
+        Latex compiling has failed.
+        Do you wish to open the log?
+    </string>
+	<string name="about">About</string>
+	<string name="open_source_title">Open Source Licenses</string>
+	<string name="my_website"><a href="http://barkiapk.blogspot.com" >Barki Apk</a></string>
+	<string name="my_facebook"><a href="https://facebook.com/profile.php?id=3203834" >@facebook</a></string>
+	<string name="my_mail"><a href="mohamedbarkimaths@gmail.com">mohamedbarkimaths@gmail.com</a></string>
+	<string name="developed_by">Developed by Barki Mohamed</string>
+	<string name="apache_license">Apache License, Version 2.0</string>
+	<string name="apache_license_link">https://www.apache.org/licenses/LICENSE-2.0</string>
+	<string name="why_write_permissions">Need the permission to write in external storage to save files</string>
+	<string name="font_size">Font Size</string>
+	<string name="default_font_size">12</string>
+	<string name="donations_description">The app is ad free, if you like it, a little donation would help me to maintain the server :D</string>
+	<string name="confirm_save_title">Save File?</string>
+	<string name="confirm_save_message">Do you want to save the changes?</string>
+	<string name="executable">Executable</string>
+	<string name="default_executable">MathV1</string>
+	<string name="tab_size">Tab Size</string>
+	<string name="default_tab_size">2</string>
+	<string name="exit_to_app">Exit to Home</string>
+
+</resources>

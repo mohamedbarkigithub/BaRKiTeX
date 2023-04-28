@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_green_dark"
+    tools:context=".ScreenActivity">
+    <LinearLayout
+        android:background="@drawable/action_background"
+		android:enabled="false"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:gravity="top|left"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp"
+		android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+		<Button
+			android:id="@+id/tvImageItemGroup"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:background="@drawable/button_group"
+			android:enabled="false"
+			android:textColor="#000000"
+			android:textStyle="bold"
+			tools:ignore="SpeakableTextPresentCheck" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1.0"
+            android:gravity="top|left">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvNameItemGroup"
+                android:textColor="#000000"
+				android:maxLines="3"
+                android:text="Title"
+                android:textStyle="bold"
+                android:gravity="top|left"
+				android:enabled="false"
+				android:background="@drawable/button_group"
+				tools:ignore="HardcodedText" />
+			<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvNumItemGroup"
+                android:textColor="#000000"
+				android:maxLines="1"
+                android:text="0 formula"
+                android:textStyle="bold"
+				android:typeface="monospace"
+                android:gravity="top|left"
+				tools:ignore="HardcodedText" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
+        android:background="@android:color/holo_green_dark"
+        android:padding="10dp">
+		<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+			android:id="@+id/pullToRefresh"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+			<ListView
+				android:id="@+id/listview"
+				android:divider = "@android:color/transparent"
+				android:dividerHeight = "5dp"
+				android:transcriptMode="alwaysScroll"
+				android:stackFromBottom="false"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+			</ListView>
+		</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+		<ImageButton
+			android:id="@+id/btn_add"
+			android:layout_width="70dp"
+			android:layout_height="70dp"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentBottom="true"
+			android:layout_marginRight="20dp"
+			android:layout_marginBottom="20dp"
+			android:background="@drawable/button_add"
+			android:src="@drawable/ic_plus"
+			tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+    </RelativeLayout>
+</LinearLayout>
+

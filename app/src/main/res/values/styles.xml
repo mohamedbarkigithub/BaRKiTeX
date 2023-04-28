@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppThemeGroup" parent="android:style/Theme.Holo">
+        <item name="android:forceDarkAllowed" tools:ignore="NewApi">false</item>
+        <item name="android:actionBarStyle">@style/MyActionBarGroup</item>
+        <item name="android:actionModeBackground">@color/primary_dark</item>
+    </style>
+    <!-- ActionBar styles -->
+    <style name="MyActionBarGroup"
+        parent="@android:style/Widget.Holo.ActionBar.Solid">
+        <item name="android:background">@drawable/actionbar_background_group</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+    <drawable name="actionbar_background_group">@color/primary_dark</drawable>
+    
+    <style name="AppThemeScreen" parent="android:style/Theme.Holo">
+        <item name="android:actionBarStyle">@style/MyActionBarScreen</item>
+        <item name="android:actionModeBackground">@color/main</item>
+    </style>
+    <!-- ActionBar styles -->
+    <style name="MyActionBarScreen"
+        parent="@android:style/Widget.Holo.ActionBar.Solid">
+        <item name="android:background">@drawable/actionbar_background_screen</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+    <drawable name="actionbar_background_screen">@color/main</drawable>
+    
+	<style name="AppTheme" parent="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+		<item name="android:forceDarkAllowed" tools:ignore="NewApi">false</item>
+	</style>
+    
+	<style name="AppThemme" parent="@android:style/Theme.Dialog">
+        <item name="android:forceDarkAllowed" tools:ignore="NewApi">false</item>
+		<item name="android:windowBackground">@android:color/transparent</item>
+		<item name="android:windowFrame">@null</item>
+		<item name="android:windowIsFloating">true</item>
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowTitleStyle">@null</item>
+		<item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+		<item name="android:background">@android:color/transparent</item>
+		<item name="android:backgroundDimEnabled">false</item>
+		<item name="android:windowSoftInputMode">adjustPan</item>
+	</style>
+    
+	<style name="DialogStyle" parent="@android:style/Theme.Dialog">
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowIsFloating">true</item>
+	</style>
+    
+    <style name="AppThemeEditor" parent="android:style/Theme.Holo">
+        <item name="android:forceDarkAllowed" tools:ignore="NewApi">false</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionModeBackground">@color/colorPrimaryLight</item>
+    </style>
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+        parent="@android:style/Widget.Holo.ActionBar.Solid">
+        <item name="android:background">@drawable/actionbar_background</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+    <drawable name="actionbar_background">@color/colorPrimaryLight</drawable>
+</resources>

@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+      
+    <item android:id="@+id/group_help"
+        android:icon="@drawable/ic_group_help"
+        android:title="@string/group_help_str"
+        android:showAsAction="ifRoom" />
+
+    <item android:id="@+id/group_exit"
+        android:icon="@drawable/ic_exit_to_app"
+        android:title="@string/exit_to_app"
+        android:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="horizontal">
+	<LinearLayout 
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:layout_weight="1.0" 
+		android:gravity="left"
+		android:orientation="horizontal">
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button android:text="+" android:id="@+id/maths_button" android:layout_width="wrap_content" android:layout_height="match_parent" android:background="?android:attr/selectableItemBackground" android:layout_weight="1" />
+            <Button android:text="{}" android:id="@+id/curly_brackets_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="?android:attr/selectableItemBackground" android:layout_weight="1"/>
+            <Button android:text="α" android:id="@+id/alpha_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="?android:attr/selectableItemBackground" android:layout_weight="1"/>
+            <Button android:text="ℵ" android:id="@+id/alpha_pro_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="?android:attr/selectableItemBackground" android:layout_weight="1"/>
+            <Button android:text="∠" android:id="@+id/symbole_geometrique_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="?android:attr/selectableItemBackground" android:layout_weight="1"/>
+            <Button android:text="cos" android:id="@+id/operator_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="?android:attr/selectableItemBackground" android:layout_weight="1"/>
+            <Button android:text="á" android:id="@+id/apostrof_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="?android:attr/selectableItemBackground" android:layout_weight="1"/>
+            
+        </LinearLayout>
+    </HorizontalScrollView>
+	</LinearLayout>
+	<LinearLayout 
+		android:layout_marginLeft="10dp"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:background="@android:color/transparent"
+		android:paddingRight="10dp"
+		android:gravity="right"
+		android:orientation="horizontal">
+		<ImageButton android:src="@drawable/ic_undo" android:id="@+id/undo_button" android:layout_width="wrap_content" android:layout_height="match_parent" android:background="?android:attr/selectableItemBackground"/>
+		<ImageButton android:src="@drawable/ic_redo" android:id="@+id/redo_button" android:layout_marginLeft="10dp" android:layout_width="wrap_content" android:layout_height="match_parent" android:background="?android:attr/selectableItemBackground"/>
+		<ImageButton android:src="@drawable/ic_keyboard" android:id="@+id/keyboard_button" android:layout_marginLeft="10dp" android:layout_width="wrap_content" android:layout_height="match_parent" android:background="?android:attr/selectableItemBackground"/>
+	</LinearLayout>
+</LinearLayout>

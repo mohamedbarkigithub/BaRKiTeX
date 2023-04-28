@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+	<com.mohamed.barki.tex.mathview.MathJaxView
+		android:id="@+id/formula_view_drawer_mathjax"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+	</com.mohamed.barki.tex.mathview.MathJaxView>
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@android:color/transparent"/>
+</RelativeLayout>

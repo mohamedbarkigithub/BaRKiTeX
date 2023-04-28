@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<TextView
+		android:textSize="14.0sp"
+		android:ellipsize="marquee"
+		android:id="@+id/listitemTextView"
+		android:paddingLeft="4.0dip"
+		android:paddingTop="6.0dip"
+		android:paddingRight="4.0dip"
+		android:paddingBottom="6.0dip"
+		android:fadingEdge="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="some text"
+		android:scrollHorizontally="true"
+		android:singleLine="true"
+		android:marqueeRepeatLimit="marquee_forever"/>
+
+</LinearLayout>
+

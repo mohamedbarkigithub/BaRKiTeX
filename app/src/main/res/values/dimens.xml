@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16.0dip</dimen>
+    <dimen name="activity_vertical_margin">16.0dip</dimen>
+    <dimen name="fab_margin">16.0dip</dimen>
+    <dimen name="appbar_padding_top">8.0dip</dimen>
+    <dimen name="chatBubbleMargin">5.0dip</dimen>
+    <dimen name="fab_size">56.0dip</dimen>
+    <dimen name="button_elevation">2.0dip</dimen>
+    <dimen name="button_press_elevation">4.0dip</dimen>
+    <dimen name="widget_margin">8.0dip</dimen>
+    <dimen name="app_defaultsize_w">480.0dip</dimen>
+    <dimen name="app_defaultsize_h">480.0dip</dimen>
+    <dimen name="app_minimumsize_w">320.0dip</dimen>
+    <dimen name="app_minimumsize_h">320.0dip</dimen>
+    <dimen name="slv_item_height">66dip</dimen>
+    <dimen name="slv_item_height2">120dip</dimen>
+    <dimen name="slv_item_bg_btn_width">48dip</dimen>
+    <dimen name="slv_item_bg_btn2_width">60dip</dimen>
+    <dimen name="slv_item_bg_btn_width_img">100dip</dimen>
+
+</resources>

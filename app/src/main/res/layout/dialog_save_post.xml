@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+	<LinearLayout
+		android:id="@+id/dialog_lny_info"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="top|right">
+		<ImageButton
+			android:id="@+id/dialog_close"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_cancel"
+			android:background="@android:color/transparent"/>
+		<TextView
+			android:id="@+id/dialog_info"
+			android:gravity="left"
+			android:padding="10dp"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"/>
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingBottom="10dp"
+		android:gravity="center"
+		android:layout_below="@id/dialog_lny_info"
+		android:orientation="vertical">
+		<EditText
+			android:id="@+id/dialog_edt"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textSize="25sp"
+			android:gravity="left"
+            android:hint="set statu name"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:digits="@string/fr_lang"
+			android:layout_margin="10dp"/>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+		    android:gravity="center"
+			android:orientation="horizontal">
+			<Button
+				android:layout_marginRight="10.0dip"
+				android:layout_marginLeft="10.0dip"
+				android:id="@+id/dialog_ok"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@drawable/button_ok"
+				android:textColor="#0000ff"
+				android:layout_weight="1.0" 
+				android:text="Save and exit"
+				android:textSize="25sp"/>
+			<Button
+				android:layout_marginRight="10.0dip"
+				android:layout_marginLeft="10.0dip"
+				android:id="@+id/dialog_exit"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@drawable/button_no"
+				android:textColor="#ff0000"
+				android:layout_weight="1.0" 
+				android:text="Exit"
+				android:textSize="25sp"/>
+		</LinearLayout>
+	</LinearLayout>
+</RelativeLayout>
+
