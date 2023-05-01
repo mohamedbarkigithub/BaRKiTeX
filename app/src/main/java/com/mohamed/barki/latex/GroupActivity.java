@@ -5,20 +5,33 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.Objects;
 
 @SuppressWarnings({"deprecation", "RedundantSuppression"})
 public class GroupActivity extends Activity 
@@ -29,7 +42,8 @@ public class GroupActivity extends Activity
 	private CustomAdapterGroup customAdapter;
 	private ModelGroup md;
 	final Context contextSave = GroupActivity.this;
-	@Override
+	@SuppressLint("SuspiciousIndentation")
+    @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -37,8 +51,13 @@ public class GroupActivity extends Activity
 		if(Function.getValue(contextSave, "screen").equals("true")){getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);}
 
 		baa = "exitt";
-		
-		listView = findViewById(R.id.listview_group);
+
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+            findViewById(R.id.editor_action_bar).setVisibility(View.VISIBLE);
+        }
+
+
+        listView = findViewById(R.id.listview_group);
         listView.setTranscriptMode(ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL); 
 		listView.setStackFromBottom(false);
         ItemModelList = new ArrayList<>();
@@ -70,6 +89,7 @@ public class GroupActivity extends Activity
             pullToRefresh.setRefreshing(false);
             refreshListView();
         });
+        if(Function.getValue(GroupActivity.this, "update").isEmpty()) Function.saveFromText(GroupActivity.this, "update", Function.setTime());
     }
     private void initialisation() {
         if(Function.getValue(contextSave, "nbrItemGroup").isEmpty()){Function.saveFromText(contextSave, "nbrItemGroup", "-1"); nbrItemGroup=-1;}
@@ -189,6 +209,8 @@ public class GroupActivity extends Activity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         this.menu = menu;
+        if(!Function.isAdmin(GroupActivity.this))
+            menu.findItem(R.id.item_update).setVisible(false);
         return true;
     }
     @SuppressLint("NonConstantResourceId")
@@ -203,6 +225,16 @@ public class GroupActivity extends Activity
             case R.id.group_exit:
                 superBackPressed();
                 break;
+            case R.id.item_share: Function.share(GroupActivity.this, GroupActivity.this); break;
+            case R.id.item_update:
+                if(Function.isNetworkConnected(this)){
+                    String update = Function.setTime();
+                    FirebaseDatabase.getInstance().getReference().child("update")
+                            .setValue(update)
+                            .addOnSuccessListener(unused -> Function.showToastMessage(this, getString(R.string.success_update)))
+                            .addOnFailureListener(e -> Function.showToastMessage(this, getString(R.string.failure_update)));
+                }
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -212,7 +244,6 @@ public class GroupActivity extends Activity
         final Dialog dialog = new Dialog(contextSave, R.style.DialogStyle);
         dialog.setContentView(R.layout.dialog_test_remove);
         dialog.setCanceledOnTouchOutside(false);
-        //dialog.setTitle(v1);
         ((TextView) dialog.findViewById(R.id.dialog_info)).setText(v1);
         Button btnT = dialog.findViewById(R.id.dialog_yes);
         btnT.setOnClickListener(v -> {
@@ -230,7 +261,6 @@ public class GroupActivity extends Activity
             }
             nbrItem = nbr;
             Function.saveFromText(contextSave, "nbrItemGroup", String.valueOf(nbrItem));
-            //Function.showToastMessage(context, String.valueOf(position));
             ItemModelList.remove(position);
             customAdapter.notifyDataSetChanged();
             if(!Function.getValue(contextSave, "nbrItem@"+numGroup).isEmpty()){
@@ -251,4 +281,63 @@ public class GroupActivity extends Activity
         });
         dialog.show();
 	}
+    boolean boolUpdate = true;
+    DatabaseReference updateReference;
+    ValueEventListener valueEventListener;
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(Function.isNetworkConnected(this)){
+            updateReference = FirebaseDatabase.getInstance().getReference().child("update");
+            valueEventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists() && boolUpdate) {
+                        long old_version = Long.parseLong(Function.getValue(GroupActivity.this, "update"));
+                        long new_version = Long.parseLong(Objects.requireNonNull(snapshot.getValue(String.class)));
+                        if (old_version < new_version) openDialog();
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            };
+            updateReference.addValueEventListener(valueEventListener);
+        }
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(Function.isNetworkConnected(this)) updateReference.removeEventListener(valueEventListener);
+    }
+    private void openDialog() {
+        boolUpdate = false;
+        final Dialog dialog = new Dialog(GroupActivity.this, R.style.DialogStyle);
+        dialog.setContentView(R.layout.dialog_update);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.setCancelable(false);
+        ((TextView) dialog.findViewById(R.id.dialog_info)).setText(getString(R.string.save_app));
+        ((TextView) dialog.findViewById(R.id.dialog_infoo)).setText(getString(R.string.save_this_app));
+        ((TextView) dialog.findViewById(R.id.dialog_infooo)).setText(getString(R.string.save_app_offline));
+        ((ImageButton)dialog.findViewById(R.id.dialog_ok)).setImageResource(R.drawable.ic_refreshh);
+        dialog.findViewById(R.id.dialog_ok).setOnClickListener(v -> {
+            Function.saveFromText(this, "update", Function.setTime());
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+getPackageName()));
+            startActivity(browserIntent);
+            dialog.dismiss();
+            finishAffinity();
+            finishAndRemoveTask();
+        });
+        ((ImageButton)dialog.findViewById(R.id.dialog_cancel)).setImageResource(R.drawable.ic_close);
+        dialog.findViewById(R.id.dialog_cancel).setOnClickListener(v -> {
+            Function.saveFromText(this, "update", Function.setTime());
+            dialog.dismiss();
+            boolUpdate = true;
+        });
+        if(!this.isFinishing()){
+            Function.saveFromText(this, "update", Function.setTime());
+            dialog.show();
+        }
+    }
 }

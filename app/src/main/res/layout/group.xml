@@ -6,6 +6,13 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
     android:background="@android:color/holo_green_dark">
+	<LinearLayout
+		android:id="@+id/editor_action_bar"
+		android:layout_width="match_parent"
+		android:layout_height="100dp"
+		android:orientation="horizontal"
+		android:visibility="gone"
+		tools:ignore="UselessLeaf" />
 	<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

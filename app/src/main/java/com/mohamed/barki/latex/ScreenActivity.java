@@ -1,8 +1,13 @@
 package com.mohamed.barki.latex;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,14 +15,22 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mohamed.barki.latex.latex.activities.EditorActivity;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 @SuppressWarnings({"deprecation", "RedundantSuppression"})
 public class ScreenActivity extends Activity implements OnClickListener
@@ -36,12 +49,18 @@ public class ScreenActivity extends Activity implements OnClickListener
 	{
 		// TODO: Implement this method
 	}
+    @SuppressLint("SuspiciousIndentation")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen);
 		if(Function.getValue(contextSave, "screen").equals("true")){getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);}
+
+		if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+			findViewById(R.id.editor_action_bar).setVisibility(View.VISIBLE);
+		}
+
 		Intent iin= getIntent();
         Bundle b = iin.getExtras();
         if(b!=null){
@@ -72,6 +91,7 @@ public class ScreenActivity extends Activity implements OnClickListener
 			refreshListView();
 		});
     }
+    @SuppressLint("SuspiciousIndentation")
     private void initialisation() {
         if(Function.getValue(contextSave, "nbrItem@"+numGroup).isEmpty()){Function.saveFromText(contextSave, "nbrItem@"+numGroup, "-1"); nbrItem=-1;}
         else{nbrItem = Integer.parseInt(Function.getValue(contextSave, "nbrItem@"+numGroup));}
@@ -117,7 +137,8 @@ public class ScreenActivity extends Activity implements OnClickListener
 		nbrItem = nbr;
 		Function.saveFromText(contextSave, "nbrItem@"+numGroup, String.valueOf(nbrItem));
 	}
-	private void dialogAddItem() {
+	@SuppressLint("SuspiciousIndentation")
+    private void dialogAddItem() {
 		String nbrItemString = Function.getValue(contextSave, "nbrItem@"+numGroup);
 		nbrItem = Integer.parseInt(nbrItemString);
         nbrItem++;
@@ -144,12 +165,13 @@ public class ScreenActivity extends Activity implements OnClickListener
         this.menu = menu;
         return true;
     }
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-		if (id == R.id.item_exit) {
-			returnToGroup();
-		}
+        if (id == R.id.item_exit) {
+            returnToGroup();
+        }
         return super.onOptionsItemSelected(item);
     }
     private void returnToGroup() {
@@ -165,5 +187,4 @@ public class ScreenActivity extends Activity implements OnClickListener
     public void onBackPressed(){
 		returnToGroup();
 	}
-	
 }

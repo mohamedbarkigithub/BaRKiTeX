@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">BaRKiTeX</string>
+    <string name="app_url" translatable="false">https://play.google.com/store/apps/details?id=com.mohamed.barki.latex</string>
+    <string name="sharesubject">Share App BaRKiTex</string>
+    <string name="pkgadmin" translatable="false">com.mohamed.barki.admin</string>
     <string name="drawer_close">Close</string>
     <string name="drawer_open">Open</string>
 	<string name="page_about">Developer Facebook Page:</string>
@@ -85,4 +88,14 @@
     <string name="default_tab_size">2</string>
     <string name="exit_to_app">Exit to Home</string>
     <string name="dont_clear_data">The data of this application cannot be deleted</string>
+    <string name="share">Share app</string>
+    <string name="success_update" translatable="false">success_update</string>
+    <string name="failure_update" translatable="false">success_update</string>
+
+    <string name="save_app" translatable="false">Update the application</string>
+    <string name="save_this_app" translatable="false">Do you want to update this app?</string>
+    <string name="save_app_offline" translatable="false">Updating the application helps to improve some features and add some files and features</string>
+    <string name="close" translatable="false">close</string>
+    <string name="update" translatable="false">update</string>
+
 </resources>

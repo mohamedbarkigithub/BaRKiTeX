@@ -8,6 +8,13 @@
     android:layout_height="match_parent"
     android:background="@android:color/holo_green_dark"
     tools:context=".ScreenActivity">
+	<LinearLayout
+		android:id="@+id/editor_action_bar"
+		android:layout_width="match_parent"
+		android:layout_height="100dp"
+		android:orientation="horizontal"
+		android:visibility="gone"
+		tools:ignore="UselessLeaf" />
     <LinearLayout
         android:background="@drawable/action_background"
 		android:enabled="false"

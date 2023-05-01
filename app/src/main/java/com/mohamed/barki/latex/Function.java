@@ -6,29 +6,44 @@ import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PermissionInfo;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.mohamed.barki.latex.latex.LatexEditor;
 
 import java.io.File;
 import java.lang.Character.UnicodeBlock;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Hashtable;
 import java.util.Locale;
 
 @SuppressWarnings({"deprecation", "RedundantSuppression"})
@@ -39,6 +54,24 @@ public class Function extends Activity
     {
         super.onCreate(savedInstanceState);
 		
+	}
+	public static boolean isNetworkConnected(Context getAppContext) {
+		ConnectivityManager cm = (ConnectivityManager) getAppContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo activeNetworkInfo = cm.getActiveNetworkInfo();
+		return cm.getActiveNetwork() != null && cm.getNetworkCapabilities(cm.getActiveNetwork()) != null && activeNetworkInfo != null && activeNetworkInfo.isConnected();
+	}
+	public static boolean isAdmin(Activity activity) {
+		return Function.isPackageInstalled(activity, activity.getString(R.string.pkgadmin));
+	}
+
+	public static boolean isPackageInstalled(Context getAppContext, String packageName) {
+		PackageManager packageManager = getAppContext.getPackageManager();
+		try {
+			packageManager.getPackageInfo(packageName, 0);
+			return true;
+		} catch (PackageManager.NameNotFoundException e) {
+			return false;
+		}
 	}
 	public static boolean validate(Context cntx, LatexEditor edt, String ss) {
         
@@ -256,6 +289,51 @@ public class Function extends Activity
 		lnyAll.addView(tv);
 		dialog.show();
 	}
+	public static void share(final Context getAppContext, final Activity myActivity) {
+		final Dialog dialog = new Dialog(getAppContext, R.style.DialogStyle);
+		dialog.setContentView(R.layout.dialog_share);
+		dialog.setCanceledOnTouchOutside(false);
+		dialog.setCancelable(false);
+		dialog.findViewById(R.id.dialog_close).setOnClickListener(v -> dialog.dismiss());
+		int widthPX = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 300, getAppContext.getResources().getDisplayMetrics());
+		int heightPX = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 300, getAppContext.getResources().getDisplayMetrics());
+		LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(widthPX, heightPX);
+		dialog.findViewById(R.id.dialog_lny).setLayoutParams(layoutParams);
+		qr_code(getAppContext, dialog.findViewById(R.id.dialog_image));
+		dialog.findViewById(R.id.dialog_button).setOnClickListener(v -> {
+			Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+			sharingIntent.setType("text/plain");
+			sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getAppContext.getString(R.string.sharesubject));
+			sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getAppContext.getString(R.string.app_url));
+			myActivity.startActivity(Intent.createChooser(sharingIntent, getAppContext.getString(R.string.share)));
+		});
+		dialog.show();
+	}
+
+	/**
+	 * @noinspection CallToPrintStackTrace
+	 */
+	public static void qr_code(final Context getAppContext, final ImageView img) {
+		Hashtable<EncodeHintType, ErrorCorrectionLevel> hintMap = new Hashtable<>();
+		hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H); // H = 30% damage
+		int size = 1024;
+		QRCodeWriter writer = new QRCodeWriter();
+		try {
+			BitMatrix bitMatrix = writer.encode(getAppContext.getString(R.string.app_url), BarcodeFormat.QR_CODE, size, size, hintMap);
+			int width = bitMatrix.getWidth();
+			int height = bitMatrix.getHeight();
+
+			Bitmap bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
+			for (int x = 0; x < width; x++) {
+				for (int y = 0; y < height; y++) {
+					bmp.setPixel(x, y, bitMatrix.get(x, y) ? Color.BLACK : Color.WHITE);
+				}
+			}
+			img.setImageBitmap(bmp);
+		} catch (WriterException e) {
+			e.printStackTrace();
+		}
+	}
 	public static int dpToPx(int dp) {return (int) (dp * Resources.getSystem().getDisplayMetrics().density);}
 	public static String getApplicationName(Context context) {
 		ApplicationInfo applicationInfo = context.getApplicationInfo();
@@ -286,5 +364,10 @@ public class Function extends Activity
 		assert dir != null;
 		return dir.delete();
 	}
-	
+	public static String setTime() {
+		String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+		String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+
+		return currentDate.replaceAll("-", "") + currentTime.replaceAll(":", "");
+	}
 }

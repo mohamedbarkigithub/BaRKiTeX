@@ -108,5 +108,7 @@
 	<string name="tab_size">Tab Size</string>
 	<string name="default_tab_size">2</string>
 	<string name="exit_to_app">Exit to Home</string>
+	<string name="share">Share app</string>
+	<string name="sharesubject">Share App BaRKiTex</string>
 
 </resources>

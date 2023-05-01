@@ -2,13 +2,46 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.mohamed.barki.latex">
+    <queries>
+        <package android:name="com.mohamed.barki.admin" />
+        <package android:name="com.facebook.katana" />
+        <package android:name="com.facebook.lite" />
+        <package android:name="com.instagram.android" />
+        <package android:name="com.instagram.lite" />
+        <package android:name="com.google.android.youtube" />
+        <package android:name="org.telegram.messenger" />
+        <package android:name="org.telegram.messenger.web" />
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="http"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="fb"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="tg"/>
+        </intent>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+    </queries>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- view Wi-Fi connections -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- view network connections -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-	<uses-permission 
-		android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
-        tools:ignore="ScopedStorage" />
+        android:name="com.google.android.gms.permission.AD_ID"
+        tools:node="remove" />
     <permission
         android:name="com.mohamed.barki.latex.MYPERMISSION"
         android:protectionLevel="signature"  />
@@ -52,7 +85,7 @@
             android:permission="com.abo.mokbel.test.MYPERMISSION"
             android:screenOrientation="portrait"
             android:exported="false"
-            tools:ignore="LockedOrientationActivity" />
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
 		<activity
             android:name="com.mohamed.barki.latex.ScreenActivity"
             android:label="@string/screen_name"
@@ -63,7 +96,7 @@
             android:permission="com.abo.mokbel.test.MYPERMISSION"
             android:screenOrientation="portrait"
             android:exported="false"
-            tools:ignore="LockedOrientationActivity" />
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name="com.mohamed.barki.latex.latex.activities.EditorActivity"
             android:icon="@drawable/icon_editor"
@@ -73,13 +106,13 @@
             android:permission="com.abo.mokbel.test.MYPERMISSION"
             android:screenOrientation="portrait"
             android:exported="false"
-            tools:ignore="LockedOrientationActivity" />
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name="com.mohamed.barki.latex.ManageSpaceActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|uiMode"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing"
             android:exported="true"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="DiscouragedApi,LockedOrientationActivity"/>
     </application>
 </manifest>
