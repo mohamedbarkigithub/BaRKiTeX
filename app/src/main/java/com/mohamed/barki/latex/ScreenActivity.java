@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex;
+package com.mohamed.barki.latex;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.mohamed.barki.tex.latex.activities.EditorActivity;
+import com.mohamed.barki.latex.latex.activities.EditorActivity;
 
 import java.util.ArrayList;
 
@@ -117,8 +117,7 @@ public class ScreenActivity extends Activity implements OnClickListener
 		nbrItem = nbr;
 		Function.saveFromText(contextSave, "nbrItem@"+numGroup, String.valueOf(nbrItem));
 	}
-	public static String st = "com.moh", stt = "amed.ba", sttt = "rki.t", stttt = "ex", sttttt = "BaRKiTeX";
-    private void dialogAddItem() {
+	private void dialogAddItem() {
 		String nbrItemString = Function.getValue(contextSave, "nbrItem@"+numGroup);
 		nbrItem = Integer.parseInt(nbrItemString);
         nbrItem++;

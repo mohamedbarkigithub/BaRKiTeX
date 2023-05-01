@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex.mathview;
+package com.mohamed.barki.latex.mathview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,7 +12,7 @@ import android.webkit.WebView;
 
 import androidx.core.content.ContextCompat;
 
-import com.mohamed.barki.tex.R;
+import com.mohamed.barki.latex.R;
 
 @SuppressWarnings({"deprecation", "RedundantSuppression"})
 public class KatexView extends WebView {

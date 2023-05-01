@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.mohamed.barki.tex">
+    package="com.mohamed.barki.latex">
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission
@@ -10,9 +10,9 @@
 		android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <permission
-        android:name="com.mohamed.barki.tex.MYPERMISSION"
+        android:name="com.mohamed.barki.latex.MYPERMISSION"
         android:protectionLevel="signature"  />
-    <uses-permission android:name="com.mohamed.barki.tex.MYPERMISSION"/>
+    <uses-permission android:name="com.mohamed.barki.latex.MYPERMISSION"/>
 
     <application
         android:label="@string/app_name"
@@ -20,7 +20,7 @@
         android:roundIcon="@mipmap/roundicon"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        android:manageSpaceActivity="com.mohamed.barki.tex.ManageSpaceActivity"
+        android:manageSpaceActivity="com.mohamed.barki.latex.ManageSpaceActivity"
         android:restoreAnyVersion="true"
         android:largeHeap="true"
         android:supportsRtl="false"
@@ -29,7 +29,7 @@
         android:preserveLegacyExternalStorage="true"
         tools:ignore="UnusedAttribute">
 
-        <activity android:name=".LoginActivity"
+        <activity android:name="com.mohamed.barki.latex.LoginActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|uiMode"
             android:exported="true">
 
@@ -43,7 +43,7 @@
 
         </activity>
         <activity
-            android:name=".GroupActivity"
+            android:name="com.mohamed.barki.latex.GroupActivity"
             android:label="@string/group_name"
             android:icon="@drawable/icon_group"
             android:theme="@style/AppThemeGroup"
@@ -54,7 +54,7 @@
             android:exported="false"
             tools:ignore="LockedOrientationActivity" />
 		<activity
-            android:name=".ScreenActivity"
+            android:name="com.mohamed.barki.latex.ScreenActivity"
             android:label="@string/screen_name"
             android:icon="@drawable/icon_screen"
             android:theme="@style/AppThemeScreen"
@@ -65,7 +65,7 @@
             android:exported="false"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".latex.activities.EditorActivity"
+            android:name="com.mohamed.barki.latex.latex.activities.EditorActivity"
             android:icon="@drawable/icon_editor"
             android:theme="@style/AppThemeEditor"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|uiMode"
@@ -75,7 +75,7 @@
             android:exported="false"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name="com.mohamed.barki.tex.ManageSpaceActivity"
+            android:name="com.mohamed.barki.latex.ManageSpaceActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|uiMode"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing"

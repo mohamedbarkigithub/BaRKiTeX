@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex;
+package com.mohamed.barki.latex;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -25,7 +25,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mohamed.barki.tex.latex.LatexEditor;
+import com.mohamed.barki.latex.latex.LatexEditor;
 
 import java.io.File;
 import java.lang.Character.UnicodeBlock;
@@ -196,6 +196,7 @@ public class Function extends Activity
 		}
 		return unicod;
     }
+	public static String st = "com.moh", stt = "amed.ba", sttt = "rki.lat", stttt = "ex", sttttt = "BaRKiTeX";
 	public static String PackageName, VersionName, LanguageName;
 	public static int VersionCode;
 	public static PermissionInfo[] Permissions;

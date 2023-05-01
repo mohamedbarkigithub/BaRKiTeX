@@ -8,7 +8,7 @@
     android:layout_gravity="center"
     android:foregroundGravity="center"
     app:layout_anchorGravity="center"
-    tools:context="com.mohamed.barki.tex.LoginActivity">
+    tools:context="com.mohamed.barki.latex.LoginActivity">
     <RelativeLayout
         android:background="@android:color/holo_green_dark"
         android:layout_width="match_parent"

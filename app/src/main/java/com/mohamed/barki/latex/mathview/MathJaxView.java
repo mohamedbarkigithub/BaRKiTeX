@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex.mathview;
+package com.mohamed.barki.latex.mathview;
 
 
 import android.annotation.SuppressLint;
@@ -14,7 +14,7 @@ import android.webkit.WebViewClient;
 
 import androidx.annotation.Nullable;
 
-import com.mohamed.barki.tex.R;
+import com.mohamed.barki.latex.R;
 
 @SuppressWarnings({"deprecation", "RedundantSuppression"})
 public class MathJaxView extends WebView {

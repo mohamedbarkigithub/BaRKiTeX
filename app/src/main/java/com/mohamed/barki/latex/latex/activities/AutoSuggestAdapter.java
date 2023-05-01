@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex.latex.activities;
+package com.mohamed.barki.latex.latex.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.TextView;
 
-import com.mohamed.barki.tex.R;
+import com.mohamed.barki.latex.R;
 
 import java.util.ArrayList;
 

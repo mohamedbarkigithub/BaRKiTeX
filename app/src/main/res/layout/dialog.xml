@@ -47,23 +47,23 @@
 		android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-		<com.mohamed.barki.tex.mathview.KatexView
+		<com.mohamed.barki.latex.mathview.KatexView
 			android:id="@+id/formula_view"
 			android:layout_gravity="center"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content">
-		</com.mohamed.barki.tex.mathview.KatexView>
+		</com.mohamed.barki.latex.mathview.KatexView>
 	</LinearLayout>
 	<LinearLayout
 		android:id="@+id/layout_formula_view_mathjax"
 		android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="0dp">
-		<com.mohamed.barki.tex.mathview.MathJaxView
+		<com.mohamed.barki.latex.mathview.MathJaxView
 			android:id="@+id/formula_view_mathjax"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content">
-		</com.mohamed.barki.tex.mathview.MathJaxView>
+		</com.mohamed.barki.latex.mathview.MathJaxView>
 	</LinearLayout>
 	<LinearLayout
 		android:id="@+id/layout_formula_view_tex"

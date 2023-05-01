@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex.latex;
+package com.mohamed.barki.latex.latex;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

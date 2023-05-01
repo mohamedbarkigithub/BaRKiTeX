@@ -5,11 +5,11 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="center">
-	<com.mohamed.barki.tex.mathview.MathJaxView
+	<com.mohamed.barki.latex.mathview.MathJaxView
 		android:id="@+id/formula_view_drawer_mathjax"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content">
-	</com.mohamed.barki.tex.mathview.MathJaxView>
+	</com.mohamed.barki.latex.mathview.MathJaxView>
 	<Button
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"

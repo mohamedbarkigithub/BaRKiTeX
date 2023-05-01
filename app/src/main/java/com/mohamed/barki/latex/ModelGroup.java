@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex;
+package com.mohamed.barki.latex;
 
 public class ModelGroup {
     String title;

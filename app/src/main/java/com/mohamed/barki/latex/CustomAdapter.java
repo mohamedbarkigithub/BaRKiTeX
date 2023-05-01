@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex;
+package com.mohamed.barki.latex;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -17,9 +17,9 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.mohamed.barki.tex.latex.activities.EditorActivity;
-import com.mohamed.barki.tex.mathview.KatexView;
-import com.mohamed.barki.tex.mathview.MathJaxView;
+import com.mohamed.barki.latex.latex.activities.EditorActivity;
+import com.mohamed.barki.latex.mathview.KatexView;
+import com.mohamed.barki.latex.mathview.MathJaxView;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex.latex.activities;
+package com.mohamed.barki.latex.latex.activities;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.mohamed.barki.tex.R;
-import com.mohamed.barki.tex.mathview.KatexView;
-import com.mohamed.barki.tex.mathview.MathJaxView;
+import com.mohamed.barki.latex.R;
+import com.mohamed.barki.latex.mathview.KatexView;
+import com.mohamed.barki.latex.mathview.MathJaxView;
 
 import java.util.ArrayList;
 

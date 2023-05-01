@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex.latex.activities;
+package com.mohamed.barki.latex.latex.activities;
 
 import android.content.Context;
 import android.view.GestureDetector;

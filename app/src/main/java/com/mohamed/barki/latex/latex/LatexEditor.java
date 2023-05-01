@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex.latex;
+package com.mohamed.barki.latex.latex;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,8 +16,8 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 
-import com.mohamed.barki.tex.Function;
-import com.mohamed.barki.tex.R;
+import com.mohamed.barki.latex.Function;
+import com.mohamed.barki.latex.R;
 
 import java.util.LinkedList;
 import java.util.regex.Matcher;

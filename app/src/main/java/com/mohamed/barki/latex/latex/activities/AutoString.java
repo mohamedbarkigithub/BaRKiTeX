@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex.latex.activities;
+package com.mohamed.barki.latex.latex.activities;
 import android.app.Activity;
 import android.os.Bundle;
 

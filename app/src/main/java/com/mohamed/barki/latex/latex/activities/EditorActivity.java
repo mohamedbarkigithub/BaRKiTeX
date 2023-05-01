@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex.latex.activities;
+package com.mohamed.barki.latex.latex.activities;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
@@ -31,14 +31,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.mohamed.barki.tex.Function;
-import com.mohamed.barki.tex.IntActivity;
-import com.mohamed.barki.tex.R;
-import com.mohamed.barki.tex.ScreenActivity;
-import com.mohamed.barki.tex.StringActivity;
-import com.mohamed.barki.tex.latex.LatexEditor;
-import com.mohamed.barki.tex.mathview.KatexView;
-import com.mohamed.barki.tex.mathview.MathJaxView;
+import com.mohamed.barki.latex.Function;
+import com.mohamed.barki.latex.IntActivity;
+import com.mohamed.barki.latex.R;
+import com.mohamed.barki.latex.ScreenActivity;
+import com.mohamed.barki.latex.StringActivity;
+import com.mohamed.barki.latex.latex.LatexEditor;
+import com.mohamed.barki.latex.mathview.KatexView;
+import com.mohamed.barki.latex.mathview.MathJaxView;
 
 import java.util.ArrayList;
 import java.util.Arrays;

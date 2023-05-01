@@ -1,4 +1,4 @@
-package com.mohamed.barki.tex;
+package com.mohamed.barki.latex;
 
 import android.app.Activity;
 import android.content.Context;
@@ -26,7 +26,7 @@ public class LoginActivity extends Activity
 
 		initialisation();
 	}
-    String str1 = ScreenActivity.st, str2 = ScreenActivity.stt, str3 = ScreenActivity.sttt, str4 = ScreenActivity.stttt, str5 = ScreenActivity.sttttt;
+    String str1 = Function.st, str2 = Function.stt, str3 = Function.sttt, str4 = Function.stttt, str5 = Function.sttttt;
 	@Override
     public void onBackPressed() {super.onBackPressed();}
 	@Override
