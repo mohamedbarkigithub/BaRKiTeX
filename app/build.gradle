@@ -9,8 +9,8 @@ android {
         applicationId "com.mohamed.barki.latex"
         minSdk 23
         targetSdk 33
-        versionCode 23042800
-        versionName "2023.04.28"
+        versionCode 23050100
+        versionName "2023.05.01"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
