@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1066061749755",
+    "firebase_url": "https://barkitex-default-rtdb.firebaseio.com",
+    "project_id": "barkitex",
+    "storage_bucket": "barkitex.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066061749755:android:5fe515a79bfd97ac68ff5e",
+        "android_client_info": {
+          "package_name": "com.mohamed.barki.latex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066061749755-4pg007pp6thqjfpakgp2k5ifpmokqi0a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwojQMdxigNatRWbsZLmqYB0Oj8KL1kN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066061749755-4pg007pp6thqjfpakgp2k5ifpmokqi0a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
